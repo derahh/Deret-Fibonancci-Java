@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +11,9 @@ public class Main {
         int hasil;
         int temp1 = 1;
         int temp2 = 1;
-        int jumlah = temp1 + temp2;
+        ArrayList reverse = new ArrayList();
+        reverse.add(temp1);
+        reverse.add(temp2);
 
         System.out.println("Input:");
         int input = scan.nextInt();
@@ -20,8 +23,10 @@ public class Main {
             hasil = temp1 + temp2;
             temp1 = temp2;
             temp2 = hasil;
-            jumlah += hasil;
+            reverse.add(hasil);
         }
-        System.out.println(jumlah);
+        for (int i = reverse.size()-1; i >= 0; i--) {
+            System.out.print(reverse.get(i) + " ");
+        }
     }
 }
